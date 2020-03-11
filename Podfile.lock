@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.8.1)
+  - iOSDropDown (0.2.7)
+  - IQKeyboardManager (6.2.0)
+  - SwiftyJSON (4.2.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - iOSDropDown
+  - IQKeyboardManager
+  - SwiftyJSON
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - iOSDropDown
+    - IQKeyboardManager
+    - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 16ce2c353fb72865124ddae8a57c5942388f4f11
+  iOSDropDown: 7a4cfc67d5166f319858747b63cd2f7760c4fb4b
+  IQKeyboardManager: 6194101620b73af5e67900b8f89707a99de0b804
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+
+PODFILE CHECKSUM: 92ae990fe5c9d9e893bc4831b16a1270d9462668
+
+COCOAPODS: 1.5.3
