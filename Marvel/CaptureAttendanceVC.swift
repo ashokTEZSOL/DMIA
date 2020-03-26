@@ -31,52 +31,70 @@ class CaptureAttendanceVC: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         // authentication
-        BiometricAuthenticate.shared.allowableReuseDuration = 60
+        BiometricAuthenticate.shared.allowableReuseDuration = 10
         
         if BiometricAuthenticate.shared.touchIDAvailable() || BiometricAuthenticate.shared.faceIDAvailable() {
             
             BiometricAuthenticate.authenticateWithBioMetrics(reason: "To capture attendance", fallbackTitle: "", cancelTitle: "Cancel", success: {
-                // authentication success
-                if self.isRequested == true {
-                    // request for registration
-                    self.requestForReg()
-                } else {
-                    // capture attendance
-                    self.successAuthentication()
-                }
+				
+				//success handle
+				self.authSuccessHandle()
                 
             }) { [weak self] (error) in
-                // do nothing on canceled
-                if error == .canceledByUser || error == .canceledBySystem {
-                    return
-                }
-                // device does not support biometric (face id or touch id) authentication
-                else if error == .biometryNotAvailable {
-                    self?.alert(with: "Error", message: error.message())//self?.showErrorAlert(message: error.message())
-                }
-                    
-                    // show alternatives on fallback button clicked
-                else if error == .fallback {
-                    // here we're entering username and password
-                    self?.alert(with: "Error", message: "Something went wrong. Please try again.")
-                }
-                    
-                    // No biometry enrolled in this device, ask user to register fingerprint or face
-                else if error == .biometryNotEnrolled {
-                    self?.alert(with: "Error", message: error.message())
-                }
-                    // Biometry is locked out now, because there were too many failed attempts.
-                    // Need to enter device passcode to unlock.
-                else if error == .biometryLockedout {
-                    self?.alert(with: "Error", message: error.message())
-                } else {
-                    self?.alert(with: "Error", message: error.message())
-                }
+				
+				self?.authFailResultHandle(error)
             }
-        } else {
-            self.alert(with: "Error", message: "Device doesn't support biometric")
-        }
+		} else if BiometricAuthenticate.shared.passcodeIsAvailable() {
+			BiometricAuthenticate.authenticateWithPasscode(reason: "To register your attendance", cancelTitle: "Cancel", success: {
+				self.authSuccessHandle()
+			}) { (failureReason) in
+				self.authFailResultHandle(failureReason)
+			}
+		} else {
+			self.alert(with: "Error", message: "Device doesn't support/enable biometric")
+		}
     }
+	
+	func authSuccessHandle() {
+		// authentication success
+		if self.isRequested == true {
+			// request for registration
+			self.requestForReg()
+		} else {
+			// capture attendance
+			self.successAuthentication()
+		}
+	}
+	
+	
+	func authFailResultHandle(_ error : AuthenticationError) {
+		// do nothing on canceled
+		if error == .canceledByUser || error == .canceledBySystem {
+			return
+		}
+		// device does not support biometric (face id or touch id) authentication
+		else if error == .biometryNotAvailable {
+			self.alert(with: "Error", message: error.message())//self?.showErrorAlert(message: error.message())
+		}
+			
+			// show alternatives on fallback button clicked
+		else if error == .fallback {
+			// here we're entering username and password
+			self.alert(with: "Error", message: "Something went wrong. Please try again.")
+		}
+			
+			// No biometry enrolled in this device, ask user to register fingerprint or face
+		else if error == .biometryNotEnrolled {
+			self.alert(with: "Error", message: error.message())
+		}
+			// Biometry is locked out now, because there were too many failed attempts.
+			// Need to enter device passcode to unlock.
+		else if error == .biometryLockedout {
+			self.alert(with: "Error", message: error.message())
+		} else {
+			self.alert(with: "Error", message: error.message())
+		}
+	}
     
     
     func successAuthentication() {

@@ -29,6 +29,8 @@ class RegisterVC : UIViewController {
         self.btn_Submit.layer.cornerRadius = 3
         self.btn_Submit.clipsToBounds = true
         self.txt_search.delegate = self
+		self.txt_search.textColor = UIColor.black
+		self.lbl_Emp.textColor = .black
         self.txt_search.rowHeight = 50
         self.txt_search.arrowSize = 0
         

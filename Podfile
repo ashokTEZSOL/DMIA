@@ -9,6 +9,7 @@ target 'Marvel' do
   pod 'Alamofire'
   pod 'iOSDropDown'
   pod 'SwiftyJSON'
+	pod 'Firebase/Analytics'
   
   # Pods for Marvel
 

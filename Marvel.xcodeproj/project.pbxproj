@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		343A39D32206030500DF5903 /* AdminVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A39D22206030500DF5903 /* AdminVC.swift */; };
 		343A39D5220606EC00DF5903 /* BiometricAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A39D4220606EC00DF5903 /* BiometricAuthentication.swift */; };
 		345F2FB521FD7172004045A2 /* CaptureAttendanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345F2FB421FD7172004045A2 /* CaptureAttendanceVC.swift */; };
+		349E597024289F5C005988A2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 349E596F24289F5C005988A2 /* GoogleService-Info.plist */; };
 		34A258C221FCBB8D0077624A /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A258C121FCBB8D0077624A /* ApiRequest.swift */; };
 		34A258C421FCBD7F0077624A /* UtilitiClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A258C321FCBD7F0077624A /* UtilitiClass.swift */; };
 		34BBEE3821FCA578009645AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BBEE3721FCA578009645AE /* AppDelegate.swift */; };
@@ -30,9 +31,10 @@
 		343A39D22206030500DF5903 /* AdminVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminVC.swift; sourceTree = "<group>"; };
 		343A39D4220606EC00DF5903 /* BiometricAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthentication.swift; sourceTree = "<group>"; };
 		345F2FB421FD7172004045A2 /* CaptureAttendanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptureAttendanceVC.swift; sourceTree = "<group>"; };
+		349E596F24289F5C005988A2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		34A258C121FCBB8D0077624A /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		34A258C321FCBD7F0077624A /* UtilitiClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitiClass.swift; sourceTree = "<group>"; };
-		34BBEE3421FCA578009645AE /* Marvel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Marvel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		34BBEE3421FCA578009645AE /* DMIA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DMIA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BBEE3721FCA578009645AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BBEE3921FCA578009645AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		34BBEE3C21FCA578009645AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,7 +74,7 @@
 		34BBEE3521FCA578009645AE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				34BBEE3421FCA578009645AE /* Marvel.app */,
+				34BBEE3421FCA578009645AE /* DMIA.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -90,6 +92,7 @@
 				34A258C121FCBB8D0077624A /* ApiRequest.swift */,
 				343A39D4220606EC00DF5903 /* BiometricAuthentication.swift */,
 				34A258C321FCBD7F0077624A /* UtilitiClass.swift */,
+				349E596F24289F5C005988A2 /* GoogleService-Info.plist */,
 				34C5837521FF546700901D57 /* Models */,
 				34BBEE3E21FCA57A009645AE /* Assets.xcassets */,
 				34BBEE4021FCA57A009645AE /* LaunchScreen.storyboard */,
@@ -144,7 +147,7 @@
 			);
 			name = Marvel;
 			productName = Marvel;
-			productReference = 34BBEE3421FCA578009645AE /* Marvel.app */;
+			productReference = 34BBEE3421FCA578009645AE /* DMIA.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -186,6 +189,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				34BBEE4221FCA57A009645AE /* LaunchScreen.storyboard in Resources */,
+				349E597024289F5C005988A2 /* GoogleService-Info.plist in Resources */,
 				34BBEE3F21FCA57A009645AE /* Assets.xcassets in Resources */,
 				34BBEE3D21FCA578009645AE /* Main.storyboard in Resources */,
 			);
@@ -200,26 +204,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Marvel/Pods-Marvel-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
-				"${BUILT_PRODUCTS_DIR}/iOSDropDown/iOSDropDown.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Marvel/Pods-Marvel-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iOSDropDown.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Marvel/Pods-Marvel-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Marvel/Pods-Marvel-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Marvel/Pods-Marvel-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B92539CE7FD2FB81266F0EB4 /* [CP] Check Pods Manifest.lock */ = {
@@ -410,15 +403,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RD98LUQ2PT;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = T8FA34NA9P;
 				INFOPLIST_FILE = Marvel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yudhi.marvel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmia.marvel;
+				PRODUCT_NAME = DMIA;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -432,15 +427,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RD98LUQ2PT;
+				CURRENT_PROJECT_VERSION = 4;
+				DEVELOPMENT_TEAM = T8FA34NA9P;
 				INFOPLIST_FILE = Marvel/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yudhi.marvel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dmia.marvel;
+				PRODUCT_NAME = DMIA;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 1;

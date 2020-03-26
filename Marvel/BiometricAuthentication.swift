@@ -114,6 +114,10 @@ extension BiometricAuthenticate {
         }
         return canEvaluate
     }
+	
+	public func passcodeIsAvailable() -> Bool {
+		return LAContext().canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
+	}
 }
 
 // MARK:- Private

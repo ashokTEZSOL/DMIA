@@ -27,6 +27,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+		self.txt_DroapDown.textColor = .black
         self.btn_rgrister.layer.cornerRadius = 3
         self.btn_rgrister.clipsToBounds = true
         self.btn_capture.layer.cornerRadius = 3
@@ -43,9 +44,12 @@ class ViewController: UIViewController {
                 self.domains = dom
                 for (index,obj) in self.domains.enumerated() {
                     if obj.DB.lowercased() == "ERP".lowercased() {
-                        self.selectedDomain = index
-                        self.txt_DroapDown.text = obj.DB
-                        self.txt_DroapDown.isUserInteractionEnabled = false
+						self.selectedDomain = index
+						DispatchQueue.main.async {
+							print(obj.DB)
+							self.txt_DroapDown.text = obj.DB
+							self.txt_DroapDown.isUserInteractionEnabled = false
+						}
                     }
 //                    self.domainNameStr.append(obj.DB)
                 }
