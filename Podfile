@@ -9,8 +9,11 @@ target 'Marvel' do
   pod 'Alamofire'
   pod 'iOSDropDown'
   pod 'SwiftyJSON'
+	
+	pod 'Firebase/Crashlytics'
+	# Recommended: Add the Firebase pod for Google Analytics
 	pod 'Firebase/Analytics'
-  
+	
   # Pods for Marvel
 
 end

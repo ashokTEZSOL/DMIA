@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 import iOSDropDown
-
+import FirebaseCrashlytics
 
 class ViewController: UIViewController {
 
@@ -86,7 +86,6 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
         if EmpID == nil {
             self.btn_rgrister.isUserInteractionEnabled = true
             self.btn_capture.isUserInteractionEnabled = false
